@@ -1,0 +1,62 @@
+.Sidebar {
+    height: 100vh;
+    background: 131212;
+    width: 5vw;
+    position: fixed;
+    left: 5px;
+}
+
+#links {
+    margin-top: 40vh;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+
+    
+    
+}
+a:link {text-decoration:none; color: #b8bbbd;}
+a:visited {text-decoration:none; color: #b8bbbd;}
+a:hover {text-decoration:none; color: #b8bbbd;}
+a:active {text-decoration:none; color: #b8bbbd;}
+
+#link2{
+  margin-top: 4vh;
+  display: inline-block;
+  position: relative;
+  color: #b8bbbd;
+}
+
+#link2:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #b8bbbd;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+#link2:hover:after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#profiles{
+    margin-top: 4vh;
+}
+
+@media screen and (max-width: 900px) {
+  .Sidebar {
+    display: none;
+}
+
+
+
+  
+}
