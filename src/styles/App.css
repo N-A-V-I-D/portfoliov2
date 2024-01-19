@@ -1,39 +1,112 @@
 *{
   box-sizing: border-box;
   color: wheat;
+  scroll-behavior: smooth;
 }
 
-#aboutMe, #skills, #projects, #contact{
+.App{
+  width: 100vw;
+}
+.aboutMe, .skills, .contact{
   /* padding-left: 10%; */
   height: 50vh;
+  width: 100%;
+  /* border: 1px solid white; */
 }
 
-#intro{
+.aboutMe {
+  height: 100vh;
+  /* border: 1px solid white; */
+  background-color: #3991ee;
+  opacity: 90%;
+}
+.intro{
   display: table;
   width: 100%;
   padding-left: 10%;
+  background-color: #313de4c9;
+  /* border: 1px solid red; */
 }
 
-#name{
+.name {
+  /* border: 1px solid white; */
   display: table-cell;
   height: 100vh;
   vertical-align: middle;
+
 }
 
-#aboutMe, #skills, #projects{
+.links {
+  /* text-align: center; */
+  /* max-height: fit-content ; */
+  /* border: 1px solid green; */
+  padding-right: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  translate: 0 300%;
+
+  /* left: calc(60%); */
+}
+
+.links > div {
+  /* text-align: center; */
+  /* left: calc(60%); */
+  padding-right: 5%;
+}
+
+#linkNames{
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+#linkNames:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #b8bbbd;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+#linkNames:hover:after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#aboutMe, #skills, #projects, #contact{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#biography{
-  width: 50%;
+#aboutMe {
+  background-color: #4f9ef3;
 }
 
-#biographyText{
-  text-align: center;
+#biography{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
 }
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #6f0b88;
+  opacity: 90%;
+}
+#type {
+  padding-bottom: 15px;
+}
+
 
 #skillsText{
   width: 50%;
@@ -44,41 +117,259 @@
 }
 
 #box{
-  padding-top: 60px;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 2vw 4vw;
-  width: 100%;
-  max-width: 600px;
-  border-radius: 10px;
-}
-form input, form textarea {
-  border: 0px;
-  border-radius: 15px;
-  margin: 10px 0;
-  padding: 20px;
-  outline: none;
-  background: lightgray;
-  font-size: 16px;
-  width: 20vw;
+  padding-top: 6em;
 }
 
-form button {
-  padding: 15px;
-  background: #ff5361;
-  color: #fff;
-  border: 0;
+#contact{
+  padding-top: 60px;
+  height: 100%;
+}
+#contactForm{
+ height: 100%;
+}
+
+
+.flex-container {
+  display: flex;
+  flex-direction: column; /* stack the rows vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.top-row {
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;    
+  justify-content: center;  
+  width: 50%;
+  display: flex;
+  justify-content: space-between; /* align elements horizontally with space between */
+}
+
+.animation-container {
+  flex: 4;
+  height: max-content; /* take up more space than the other elements in the top row */
+  /* border: 1px solid white; */
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.bottom-row {
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;    
+  justify-content: center;  
+  width: 50%;
+  display: flex;
+  justify-content: space-between; /* align elements horizontally with space between */
+}
+
+
+h1 {
+  flex: 1; /* equally divide the available space */
+}
+
+.ReactComponent1,
+.ReactComponent2 {
+  flex: 1; /* equally divide the available space */
+}
+
+a {
+  /* font-size: 36px;
+  font-weight: bold; */
+  text-decoration: none;
+  color: black;
+  
+  background-image: linear-gradient(180deg, transparent 90%, wheat 0);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  transition: background-size .4s ease;
+}
+
+a:hover {
+  background-size: 100% 100%;
+}
+
+.contact {
+  /* background-color: #5154e660; */
+  background-color: #5d166e;
+  opacity: 90%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-size: x-large;
+  align-items: center;
+}
+
+.contact form{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.contact input, textarea {
+  border: none;
+  background: none;
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 18px;
+  text-transform: uppercase;
   outline: none;
-  cursor: pointer;
-  width: 150px;
-  margin: 20px auto;
-  border-radius: 30px;
+  resize: none;
+
   
 }
 
-#footer{
-  display: none;
+.contact button {
+  background: none;
+  border: none;
+  padding-top: 1rem;
 }
 
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #5d166e;
+  opacity: 90%;
+}
+
+@media screen and (min-width: 2560px) and (min-height: 1000px) {
+  .links{
+    font-size: xx-large;
+  }
+  .aboutMe{
+    font-size: xx-large;
+  }
+  .skills {
+    font-size: x-large;
+  }
+  .contact {
+    font-size: xx-large;
+  }
+  .contact input, textarea {
+    font-size: xx-large;
+  }
+  .contact button {
+    font-size: xx-large;
+  }
+ 
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2559px) and (min-height: 1000px) and (max-height: 1000px) {
+  .links{
+    font-size: x-large;
+  }
+  .aboutMe{
+    font-size: x-large;
+  }
+  .skills {
+    font-size: x-large;
+  }
+
+  .contact {
+    font-size: x-large;
+  }
+  .contact input, textarea {
+    font-size: x-large;
+  }
+  .contact button {
+    font-size: x-large;
+  }
+
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) and (min-height: 1000px) and (max-height: 1000px) {
+  .contact {
+    font-size: medium;
+  }
+  .contact input, textarea {
+    font-size: medium;
+  }
+  .contact button {
+    font-size: medium;
+  }
+}
+
+@media screen and (max-width:1023px) and (max-height: 1000px){
+
+  .links{
+    font-size: medium;
+  }
+  .aboutMe{
+    font-size: medium;
+  }
+  .top-row, .bottom-row {
+    flex-direction: column;
+  }
+  .skills {
+    font-size: medium;
+  } 
+  .contact {
+    font-size: medium;
+  }
+  .contact input, textarea {
+    font-size: medium;
+  }
+  .contact button {
+    font-size: medium;
+  }
+ 
+}
+
+ @media screen and (max-height: 1000px) and (max-width:1023px){
+  .links{
+    font-size: medium;
+  }
+  .aboutMe{
+    font-size: small;
+  }
+  .top-row, .bottom-row {
+    flex-direction: column;
+  }
+  .skills {
+    font-size: medium;
+  }
+} 
+
+ @media screen and (max-height: 600px) {
+  .links{
+    font-size: x-small;
+  }
+  .aboutMe{
+    font-size: small;
+  }
+  .top-row{
+    padding-bottom: 10px;
+  }
+  .animation-container{
+    display: none;
+  }
+  .top-row, .bottom-row {
+    flex-direction: column;
+  }
+  .skills {
+    font-size: x-small;
+  }
+  .contact {
+    font-size: x-small;
+  }
+  .contact input, textarea {
+    font-size: x-small;
+  }
+  .contact button {
+    font-size: x-small;
+  }
+  .footer button{
+    font-size: x-small;
+  }
+} 

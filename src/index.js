@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from '/Users/navid/Documents/NavidInc/portfoliov2/src/pages/App.js';
+import Animation from '/Users/navid/Documents/NavidInc/portfoliov2/src/pages/CodingAnimation.js'
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

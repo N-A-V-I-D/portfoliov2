@@ -81,7 +81,7 @@ animation: bounce 1s ease   .8s;
   
  
 
-  @media screen and (max-width: 900px) {
+  /* @media screen and (max-width: 900px) {
     .bouncing-text{
       font-size: 4rem;
       width: fit-content;
@@ -93,4 +93,25 @@ animation: bounce 1s ease   .8s;
     .b, .o, .u, .n, .c, .e, .f, .g, .h {
       color: #b8bbbd;
     }
+  } */
+
+  @media screen and (min-width: 2560px){
+    .bouncing-text{
+      font-size: 10rem;
+    }
   }
+
+  @media screen and (min-width: 14410px) and (max-width: 2559px){
+
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+
+  }
+
+  @media screen and (max-width:1023px){
+    .bouncing-text{
+      font-size: 3rem;
+    }
+  }
+
