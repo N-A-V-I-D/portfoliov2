@@ -5,7 +5,7 @@ import '/Users/navid/Documents/NavidInc/portfoliov2/src/styles/bounce.css';
 import '/Users/navid/Documents/NavidInc/portfoliov2/src/styles/circles.css'
 import Sidebar from '/Users/navid/Documents/NavidInc/portfoliov2/src/pages/Navbar.js';
 import skate from '/Users/navid/Documents/NavidInc/portfoliov2/src/graphics/skate.gif';
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Typewriter from "typewriter-effect";
 // import "https://unpkg.com/aos@next/dist/aos.css"
 // import "aos/dist/aos.css";
@@ -25,32 +25,17 @@ import Animation from './CodingAnimation';
 import GamingAnimation from './GamingAnimation';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+
 function App() {
   useEffect(() =>{
     Aos.init(); 
   }, [])
 
   const form = useRef();
-  const firstName = useRef(null);
-  const lastName = useRef(null);
-  const email = useRef(null);
-  const phone = useRef(null);
-  const message = useRef(null);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs.sendForm(configData.one, configData.two, form.current, configData.three)
-      .then((result) => {
-          console.log(result.text);
-          firstName.current.value = '';
-          lastName.current.value = '';
-          email.current.value = '';
-          phone.current.value = '';
-          message.current.value = '';
-      }, (error) => {
-          console.log(error.text);
-      });
-  };
+  
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#b8bbbd',
@@ -76,6 +61,28 @@ function App() {
       },
     },
   });
+
+  const sendEmail = async (e) =>{
+    e.preventDefault()
+    const form = new FormData(e.target)
+    const data = {
+      "name": form.get('name'),
+      "email": form.get('email'),
+      "message": form.get('message')
+    }
+    // console.log(data)
+    const response = fetch('http://localhost:3001/',{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(data)
+    });
+    setName('');
+    setEmail('');
+    setMessage('');
+  }
 
   return (
     <div style={{backgroundColor: "#5154e660"}}>
@@ -322,10 +329,10 @@ function App() {
 
       <div className='contact'>
         <h3>Contact Me</h3>
-        <form>
-          <input name = "name" placeholder='Name'/>
-          <input name = "email" placeholder='Email'/>
-          <textarea name = "message" placeholder='Message' resiz/>
+        <form ref={form} onSubmit={sendEmail}> 
+          <input name = "name" placeholder='Name' value={name} onChange={(event) => setName(event.target.value)}/>
+          <input name = "email" placeholder='Email' value={email} onChange={(event) => setEmail(event.target.value)}/>
+          <textarea name = "message" placeholder='Message' resize = 'none' value={message} onChange={(event) => setMessage(event.target.value)}/>
           <button type="submit">Submit</button>
         </form>
       </div>

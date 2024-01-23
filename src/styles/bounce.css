@@ -4,11 +4,26 @@
     font-size: 6rem;
     font-family: arial black;  
   }
-
+ 
   .b, .o, .u, .n, .c, .e, .f, .g, .h {
     color: #b8bbbd;
     text-shadow: 0 3px #666769, 0 5px #666769, 0 7px #666769;
   }
+
+  @supports (-webkit-touch-callout: none) {
+    @media only screen and (max-device-width: 767px) {
+      .bouncing-text {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      .b, .o, .u, .n, .c, .e, .f, .g, .h {
+        color: #b8bbbd;
+        text-shadow: 0 1px #666769, 0 2px #666769, 0 3px #666769;
+      }
+      
+    }
+  }
+
+  
   @keyframes bounce {
     0%   { transform: scale(1,1) translateY(0); }
     10%  { transform: scale(1.1,.9) translateY(0); }

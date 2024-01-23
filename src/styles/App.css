@@ -19,6 +19,7 @@
   /* border: 1px solid white; */
   background-color: #3991ee;
   opacity: 90%;
+  min-height: 650px;
 }
 .intro{
   display: table;
@@ -26,6 +27,7 @@
   padding-left: 10%;
   background-color: #313de4c9;
   /* border: 1px solid red; */
+  min-height: 600px;
 }
 
 .name {
@@ -220,7 +222,6 @@ a:hover {
   border-bottom: 1px solid #666;
   color: #ddd;
   font-size: 18px;
-  text-transform: uppercase;
   outline: none;
   resize: none;
 
@@ -342,8 +343,8 @@ a:hover {
 } 
 
  @media screen and (max-height: 600px) {
-  .links{
-    font-size: x-small;
+  .aboutMe, .skills, .contact{
+    min-height: 100vh;
   }
   .aboutMe{
     font-size: small;
@@ -373,3 +374,15 @@ a:hover {
     font-size: x-small;
   }
 } 
+
+@media screen and (max-width: 600px) {
+  .animation-container{
+    display: none;
+  }
+}
+@media screen and (max-height: 600px) and (max-width: 600px){
+  .links{
+    font-size: x-small;
+  }
+}
+
