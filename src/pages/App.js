@@ -1,26 +1,13 @@
-import '/Users/navid/Documents/NavidInc/portfoliov2/src/styles/App.css';
-import '/Users/navid/Documents/NavidInc/portfoliov2/src/styles/bounce.css';
-// import '/Users/navid/Documents/NavidInc/portfoliov2/src/styles/contact.css'
-// import './contact.css'
-import '/Users/navid/Documents/NavidInc/portfoliov2/src/styles/circles.css'
-import Sidebar from '/Users/navid/Documents/NavidInc/portfoliov2/src/pages/Navbar.js';
-import skate from '/Users/navid/Documents/NavidInc/portfoliov2/src/graphics/skate.gif';
+import '../styles/App.css';
+import '../styles/bounce.css';
+import '../styles/circles.css'
 import React, {useEffect, useRef, useState} from 'react';
-import Typewriter from "typewriter-effect";
-// import "https://unpkg.com/aos@next/dist/aos.css"
-// import "aos/dist/aos.css";
 import Button from '@mui/material/Button';
-// import { makeStyles } from '@mui/styles';
 import Aos from "aos";
-// import "aos/dist/aos.css";
-import emailjs from '@emailjs/browser'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-// import configData from './config.json';
 import { experimentalStyled as styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import Animation from './CodingAnimation';
 import GamingAnimation from './GamingAnimation';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -327,7 +314,7 @@ function App() {
 
       </div> */}
 
-      <div className='contact'>
+      <div className='contact' id='contactAnchor'>
         <h3>Contact Me</h3>
         <form ref={form} onSubmit={sendEmail}> 
           <input name = "name" placeholder='Name' value={name} onChange={(event) => setName(event.target.value)}/>
@@ -361,29 +348,11 @@ function App() {
 }
 
 export default App;
-//change colors of bubbles as they scroll down or change abckgrounds as they scroll down
-//maybe include spotify plugin?
-//maybe include 2048 game
-//
-//an explanation of full stack development
-//what is a fsd? an fsd knows xyz, and ik abc. but i also like doing that aren't just coding (ik shocking), i skate i play games listen to msuic watch anime eat out (too much)
-// https://codepen.io/l-e-e/pen/MWogXNb
-//https://codepen.io/wifi/pen/DGYLPw
-//https://codepen.io/stivaliserna/pen/vYEWvwd
-//389138
-//https://codepen.io/krisantuswanandi/pen/KxrgeZ
-
-
 /*
-  •fix fonts 
-  •fix cancel submmit button
-  •responsive design
-  •
-*/
-/*
-
- "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+Sources:
+https://codepen.io/l-e-e/pen/MWogXNb
+https://codepen.io/wifi/pen/DGYLPw
+https://codepen.io/stivaliserna/pen/vYEWvwd
+389138
+https://codepen.io/krisantuswanandi/pen/KxrgeZ
 */
