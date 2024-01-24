@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import '/Users/navid/Documents/NavidInc/portfoliov2/src/styles/CodingAnimation.css';
+import '../styles/CodingAnimation.css';
 
 const CodeAnimation = () => {
   const codeBubbleRef = useRef();

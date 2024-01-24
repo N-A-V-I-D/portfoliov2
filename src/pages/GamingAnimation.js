@@ -1,5 +1,5 @@
 import React from 'react';
-import '/Users/navid/Documents/NavidInc/portfoliov2/src/styles/GamingAnimation.css'
+import '../styles/GamingAnimation.css'
 const GamingAnimation = () => {
 
     return(
